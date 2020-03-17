@@ -1,0 +1,10 @@
+---
+- name: Reload systemd configuration
+  service:
+    daemon_reload: True
+
+- name: Restart ma1sd service
+  service:
+    name: ma1sd
+    enabled: true
+    state: restarted
