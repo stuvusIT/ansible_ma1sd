@@ -15,7 +15,8 @@ The following is an example playbook which installs and configures ma1sd.
 - hosts: matrix01
   become: true
   roles:
-    - role: riot-web
+    - role: ma1sd
+  vars:
       ma1sd_deb_url: https://github.com/ma1uta/ma1sd/releases/download/2.3.0/ma1sd_2.3.0_all.deb
       ma1sd_checksum: sha256:3da8ed4777dc933fea332c596e228a66f39988885130ab6a5a70825c32fcca5e
       ma1sd_config:
