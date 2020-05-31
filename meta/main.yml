@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: haslersn
+  description: Federated Matrix Identity Server; see https://github.com/ma1uta/ma1sd
+  company: stuvus (https://stuvus.uni-stuttgart.de)
+
+  license: AGPLv3
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+
+  galaxy_tags:
+    - matrix
+    - federated
+    - identity
+    - server
+    - mxisd
+    - ma1sd
+    - messenger
+    - mail
+
+dependencies: []

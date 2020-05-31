@@ -1,0 +1,25 @@
+---
+- name: Download ma1sd package
+  get_url:
+    url: "{{ ma1sd_deb_url }}"
+    dest: /opt/ma1sd.deb
+    checksum: "{{ ma1sd_checksum }}"
+
+- name: Install ma1sd
+  apt:
+    deb: /opt/ma1sd.deb
+  notify:
+    - Reload systemd configuration
+    - Restart ma1sd service
+
+- name: Create ma1sd config directory
+  file:
+    path: /etc/ma1sd
+    state: directory
+
+- name: Set ma1sd config
+  copy:
+    content: "{{ ma1sd_config | to_nice_yaml }}\n"
+    dest: /etc/ma1sd/ma1sd.yaml
+  notify:
+    - Restart ma1sd service
